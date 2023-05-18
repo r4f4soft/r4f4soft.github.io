@@ -1,0 +1,23 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://192.168.28.249:4000/</id>
+  <title>R4f4soft</title>
+  <subtitle></subtitle>
+  <updated>2023-05-18T02:06:53+02:00</updated>
+  <author>
+    <name>r4f4soft</name>
+    <uri>http://192.168.28.249:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://192.168.28.249:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="es-ES"
+    href="http://192.168.28.249:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
+  <rights> © 2023 r4f4soft </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+</feed>
+
+
