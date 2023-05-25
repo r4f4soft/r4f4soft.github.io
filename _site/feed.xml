@@ -1,22 +1,65 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://192.168.28.249:4000/</id>
+  <id>http://192.168.28.10:4000/</id>
   <title>R4f4soft</title>
   <subtitle></subtitle>
-  <updated>2023-05-18T02:06:53+02:00</updated>
+  <updated>2023-05-25T23:56:25+02:00</updated>
   <author>
     <name>r4f4soft</name>
-    <uri>http://192.168.28.249:4000/</uri>
+    <uri>http://192.168.28.10:4000/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://192.168.28.249:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://192.168.28.10:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="es-ES"
-    href="http://192.168.28.249:4000/"/>
+    href="http://192.168.28.10:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
   <rights> © 2023 r4f4soft </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Laboratorio con Firewall en Proxmox</title>
+    <link href="http://192.168.28.10:4000/posts/Laboratorio-Proxmox/" rel="alternate" type="text/html" title="Laboratorio con Firewall en Proxmox" />
+    <published>2023-05-18T00:00:00+02:00</published>
+  
+    <updated>2023-05-18T00:00:00+02:00</updated>
+  
+    <id>http://192.168.28.10:4000/posts/Laboratorio-Proxmox/</id>
+    <content src="http://192.168.28.10:4000/posts/Laboratorio-Proxmox/" />
+    <author>
+      <name>r4f4soft</name>
+    </author>
+
+  
+    
+    <category term="Proxmox" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      En esta práctica vamos a configurar dos máquinas Ubuntu Linux, una será el cliente y la otra actuará como Firewall.
+
+Esquema de la práctica
+
+
+
+El esquema consiste en:
+
+  Una máquina que servirá de Firewall que será un contenedor Ubuntu en nuestro servidor Proxmox con dos tarjetas de red, la externa tendrá la IP 192.168.28.200 y la interna la IP 192.168.14.1.
+  Dentro de la red también habrá un ...
+    </summary>
+  
+
+  </entry>
 
 </feed>
 

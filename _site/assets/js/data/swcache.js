@@ -23,12 +23,29 @@ const resource = [
     /* --- Favicons & compressed JS --- */
     
     
+        '/assets/img/favicons/android-icon-192x192.png',
+        '/assets/img/favicons/apple-icon-114x114.png',
+        '/assets/img/favicons/apple-icon-120x120.png',
+        '/assets/img/favicons/apple-icon-144x144.png',
+        '/assets/img/favicons/apple-icon-152x152.png',
+        '/assets/img/favicons/apple-icon-180x180.png',
+        '/assets/img/favicons/apple-icon-57x57.png',
+        '/assets/img/favicons/apple-icon-60x60.png',
+        '/assets/img/favicons/apple-icon-72x72.png',
+        '/assets/img/favicons/apple-icon-76x76.png',
+        '/assets/img/favicons/favicon-16x16.png',
+        '/assets/img/favicons/favicon-256x256.png',
+        '/assets/img/favicons/favicon-32x32.png',
+        '/assets/img/favicons/favicon-96x96.png',
+        '/assets/img/favicons/favicon.ico',
+        '/assets/img/favicons/manifest.json',
+        '/assets/img/favicons/ms-icon-144x144.png',
+        '/assets/img/favicons/ms-icon-150x150.png',
+        '/assets/img/favicons/ms-icon-310x310.png',
+        '/assets/img/favicons/ms-icon-70x70.png',
         '/assets/img/favicons/android-chrome-192x192.png',
         '/assets/img/favicons/android-chrome-512x512.png',
         '/assets/img/favicons/apple-touch-icon.png',
-        '/assets/img/favicons/favicon-16x16.png',
-        '/assets/img/favicons/favicon-32x32.png',
-        '/assets/img/favicons/favicon.ico',
         '/assets/img/favicons/mstile-150x150.png',
         '/assets/js/dist/categories.min.js',
         '/assets/js/dist/commons.min.js',
@@ -42,7 +59,7 @@ const resource = [
 const allowedDomains = [
     
 
-    '192.168.28.249:4000',
+    '192.168.28.10:4000',
 
     
 
