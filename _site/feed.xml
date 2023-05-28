@@ -4,7 +4,7 @@
   <id>http://192.168.28.10:4000/</id>
   <title>R4f4soft</title>
   <subtitle></subtitle>
-  <updated>2023-05-25T23:56:25+02:00</updated>
+  <updated>2023-05-28T20:53:32+02:00</updated>
   <author>
     <name>r4f4soft</name>
     <uri>http://192.168.28.10:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://192.168.28.10:4000/posts/Laboratorio-Proxmox/" rel="alternate" type="text/html" title="Laboratorio con Firewall en Proxmox" />
     <published>2023-05-18T00:00:00+02:00</published>
   
-    <updated>2023-05-18T00:00:00+02:00</updated>
+    <updated>2023-05-28T20:48:44+02:00</updated>
   
     <id>http://192.168.28.10:4000/posts/Laboratorio-Proxmox/</id>
     <content src="http://192.168.28.10:4000/posts/Laboratorio-Proxmox/" />

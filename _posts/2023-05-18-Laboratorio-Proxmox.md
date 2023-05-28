@@ -22,7 +22,7 @@ El esquema consiste en:
 
 ![Create Linux Bridge](/assets/img/PROXMOX/paso1.png){: width="100%" }
 
-Nos dirigimos a nuestro nodo principal y a **System > Network**, pulsamos en create y a **Linux Bridge**.
+Nos dirigimos a nuestro nodo principal y a **System > Network**, pulsamos en `create` y a **Linux Bridge**.
 
 ![Colocar IP al Switch](/assets/img/PROXMOX/paso2.png){: width="600px" }
 
@@ -37,16 +37,16 @@ Nos dirigimos a nuestro "Storage" del nodo principal y nos descargamos una versi
 Una vez creado los contenedores, vamos a ver su configuración de red.
 
 ---
-## Configuración de red del contenedor Firewall
+### Configuración de red del contenedor Firewall
 ![Configuracion de red Firewall](/assets/img/PROXMOX/configuracion-red-firewall.png){: width="700px" }
 
-## Configuración de red del contenedor UbuntuCliente
+### Configuración de red del contenedor UbuntuCliente
 ![Configuracion de red Cliente](/assets/img/PROXMOX/configuracion-red-cliente.png)
 
 ---
 ## Probando conectividad en las máquinas
 
-Una vez arrancados los dos contenedores, vamos a empezar por hacer ping desde ClienteUbuntu hasta el Switch que tiene la IP **192.168.14.100**.
+Una vez arrancados los dos contenedores, vamos a empezar por hacer `ping` desde **ClienteUbuntu** hasta el Switch que tiene la IP **192.168.14.100**.
 
 ```bash
 root@ClienteUbuntu:~# ping -c 4 192.168.14.100
@@ -62,7 +62,7 @@ rtt min/avg/max/mdev = 0.044/0.053/0.063/0.007 ms
 root@ClienteUbuntu:~#
 ```
 
-Tambíen comprobaremos que existen conectividad entre **ClienteUbuntu** y las dos patas del **Firewall**, que sus IPs son **192.168.14.1** y **192.168.28.200**.
+También comprobaremos que existe conectividad entre **ClienteUbuntu** y las dos patas del **Firewall**, que sus IPs son **192.168.14.1** y **192.168.28.200**.
 
 ```bash
 root@ClienteUbuntu:~# ping -c 2 192.168.14.1
@@ -85,7 +85,7 @@ rtt min/avg/max/mdev = 0.050/0.066/0.083/0.016 ms
 root@ClienteUbuntu:~# 
 ```
 
-La máquina **Firewall** tiene conectividad con la **ClienteUbuntu**, también con el **Switch**, y conectividad con el exterior.
+La máquina **Firewall** tiene conectividad con la máquina **ClienteUbuntu**, también con el **Switch**, y conectividad con el exterior.
 
 ```bash
 root@Firewall:~# ping -c 2 192.168.14.10
@@ -143,7 +143,7 @@ Se hace con el siguiente comando:
 root@Firewall:~# echo 1 > /proc/sys/net/ipv4/ip_forward
 root@Firewall:~# 
 ```
-Ahora si hacemos ping desde la máquina **ClienteUbuntu** hacia una máquina de nuestra red local, debería funcionar.
+Ahora si hacemos `ping` desde la máquina **ClienteUbuntu** hacia una máquina de nuestra red local, debería funcionar.
 
 ```bash
 root@ClienteUbuntu:~# ping -c 2 192.168.28.108
@@ -161,10 +161,15 @@ Pero esto que hemos hecho no se queda de forma permanente, cuando reiniciemos el
 
 Para ello, debemos editar el fichero `/etc/sysctl.conf`{: .filepath} y descomentar la línea que pone `#net.ipv4.ip_forward=1`
 
+Para aplicar la configuración que acabamos de hacer vamos a usar el comando `sudo sysctl -p /etc/sysctl.conf`
+```bash
+sudo sysctl -p /etc/sysctl.conf
+```
+
 > Ahora si, pasamos a configurar **Iptables**.
 {: .prompt-info}
 
-Listamos las reglas que tine **Iptables** actualmente:
+Listamos las reglas que tiene **Iptables** actualmente:
 ```bash
 root@Firewall:~# iptables -L -nv
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
@@ -176,24 +181,6 @@ Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
 Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination         
 root@Firewall:~# 
-```
-
-Primero de nada vamos a **denegar** todo el tráfico.
-```bash
-root@Firewall:~# iptables -P INPUT DROP
-root@Firewall:~# iptables -P OUTPUT DROP
-root@Firewall:~# iptables -P FORWARD DROP
-root@Firewall:~#
-```
-
-> No os preocupéis si ya no podéis hacer **ping** al exterior, es normal.
-{: .prompt-warning}
-
-Ahora vamos a permitir el tráfico **icmp** tanto de entrada, como de salida.
-```bash
-root@Firewall:~# iptables -A FORWARD -i eth0 -o net14 -p icmp -j ACCEPT
-root@Firewall:~# iptables -A FORWARD -o eth0 -i net14 -p icmp -j ACCEPT
-root@Firewall:~#
 ```
 
 Por último vamos a agregar una regla para que la máquina **ClienteUbuntu** tenga acceso a internet.
@@ -217,5 +204,31 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 rtt min/avg/max/mdev = 10.696/10.897/11.099/0.201 ms
 root@ClienteUbuntu:~# 
 ```
+
+---
+## Guardar configuración de Iptables
+
+Todos los cambios realizados en Iptables se borrarán una vez reiniciemos la máquina **Firewall**, así que vamos a aprender como podemos guardar todos los cambios.
+
+Instalamos el paquete `iptables-persistent` (Cuando nos pregunte **Save current IPv4/IPv6 rules?** le damos a **Yes**)
+```bash
+root@Firewall:~# apt install iptables-persistent -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+iptables-persistent is already the newest version (1.0.16).
+0 upgraded, 0 newly installed, 0 to remove and 117 not upgraded.
+root@Firewall:~# 
+```
+
+Guardamos la configuración con este comando:
+```bash
+root@Firewall:~# netfilter-persistent save
+run-parts: executing /usr/share/netfilter-persistent/plugins.d/15-ip4tables save
+run-parts: executing /usr/share/netfilter-persistent/plugins.d/25-ip6tables save
+root@Firewall:~#
+```
+
+Si reiniciamos la máquina, nuestras reglas de **Iptables** seguirán como estaban configuradas.
 
 `Y aquí da por finalizado el laboratorio, muchas gracias por leer el post, nos vemos en el próximo :)`

@@ -69,7 +69,7 @@
 <meta property="twitter:image" content="http://192.168.28.10:4000/assets/img/PROXMOX/proxmoxBanner.png" />
 <meta property="twitter:title" content="Laboratorio con Firewall en Proxmox" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-18T00:00:00+02:00","datePublished":"2023-05-18T00:00:00+02:00","description":"En esta práctica vamos a configurar dos máquinas Ubuntu Linux, una será el cliente y la otra actuará como Firewall.","headline":"Laboratorio con Firewall en Proxmox","image":"http://192.168.28.10:4000/assets/img/PROXMOX/proxmoxBanner.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://192.168.28.10:4000/posts/Laboratorio-Proxmox/"},"url":"http://192.168.28.10:4000/posts/Laboratorio-Proxmox/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-28T20:48:44+02:00","datePublished":"2023-05-18T00:00:00+02:00","description":"En esta práctica vamos a configurar dos máquinas Ubuntu Linux, una será el cliente y la otra actuará como Firewall.","headline":"Laboratorio con Firewall en Proxmox","image":"http://192.168.28.10:4000/assets/img/PROXMOX/proxmoxBanner.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://192.168.28.10:4000/posts/Laboratorio-Proxmox/"},"url":"http://192.168.28.10:4000/posts/Laboratorio-Proxmox/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1351,18 +1351,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -1379,6 +1367,30 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -1444,6 +1456,30 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Actualizado
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1685299724"
+  data-df="DD/MM/YYYY"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  28/05/2023
+</em>
+
+    </span>
+    
 
   
     
@@ -1495,7 +1531,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1097 palabras"
+  title="1159 palabras"
 >
   <em>6 min</em> de lectura</span>
 
@@ -1524,7 +1560,7 @@
 
 <p><a href="/assets/img/PROXMOX/paso1.png" class="popup img-link "><img data-src="/assets/img/PROXMOX/paso1.png" alt="Create Linux Bridge" width="100%" class="lazyload" data-proofer-ignore></a></p>
 
-<p>Nos dirigimos a nuestro nodo principal y a <strong>System &gt; Network</strong>, pulsamos en create y a <strong>Linux Bridge</strong>.</p>
+<p>Nos dirigimos a nuestro nodo principal y a <strong>System &gt; Network</strong>, pulsamos en <code class="language-plaintext highlighter-rouge">create</code> y a <strong>Linux Bridge</strong>.</p>
 
 <p><a href="/assets/img/PROXMOX/paso2.png" class="popup img-link "><img data-src="/assets/img/PROXMOX/paso2.png" alt="Colocar IP al Switch" width="600px" class="lazyload" data-proofer-ignore></a></p>
 
@@ -1539,16 +1575,16 @@
 <p>Una vez creado los contenedores, vamos a ver su configuración de red.</p>
 
 <hr />
-<h2 id="configuración-de-red-del-contenedor-firewall"><span class="me-2">Configuración de red del contenedor Firewall</span><a href="#configuración-de-red-del-contenedor-firewall" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="configuración-de-red-del-contenedor-firewall"><span class="me-2">Configuración de red del contenedor Firewall</span><a href="#configuración-de-red-del-contenedor-firewall" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p><a href="/assets/img/PROXMOX/configuracion-red-firewall.png" class="popup img-link "><img data-src="/assets/img/PROXMOX/configuracion-red-firewall.png" alt="Configuracion de red Firewall" width="700px" class="lazyload" data-proofer-ignore></a></p>
 
-<h2 id="configuración-de-red-del-contenedor-ubuntucliente"><span class="me-2">Configuración de red del contenedor UbuntuCliente</span><a href="#configuración-de-red-del-contenedor-ubuntucliente" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="configuración-de-red-del-contenedor-ubuntucliente"><span class="me-2">Configuración de red del contenedor UbuntuCliente</span><a href="#configuración-de-red-del-contenedor-ubuntucliente" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p><a href="/assets/img/PROXMOX/configuracion-red-cliente.png" class="popup img-link "><img data-src="/assets/img/PROXMOX/configuracion-red-cliente.png" alt="Configuracion de red Cliente" class="lazyload" data-proofer-ignore></a></p>
 
 <hr />
 <h2 id="probando-conectividad-en-las-máquinas"><span class="me-2">Probando conectividad en las máquinas</span><a href="#probando-conectividad-en-las-máquinas" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Una vez arrancados los dos contenedores, vamos a empezar por hacer ping desde ClienteUbuntu hasta el Switch que tiene la IP <strong>192.168.14.100</strong>.</p>
+<p>Una vez arrancados los dos contenedores, vamos a empezar por hacer <code class="language-plaintext highlighter-rouge">ping</code> desde <strong>ClienteUbuntu</strong> hasta el Switch que tiene la IP <strong>192.168.14.100</strong>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1576,7 +1612,7 @@ rtt min/avg/max/mdev <span class="o">=</span> 0.044/0.053/0.063/0.007 ms
 root@ClienteUbuntu:~#
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>Tambíen comprobaremos que existen conectividad entre <strong>ClienteUbuntu</strong> y las dos patas del <strong>Firewall</strong>, que sus IPs son <strong>192.168.14.1</strong> y <strong>192.168.28.200</strong>.</p>
+<p>También comprobaremos que existe conectividad entre <strong>ClienteUbuntu</strong> y las dos patas del <strong>Firewall</strong>, que sus IPs son <strong>192.168.14.1</strong> y <strong>192.168.28.200</strong>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1618,7 +1654,7 @@ rtt min/avg/max/mdev <span class="o">=</span> 0.050/0.066/0.083/0.016 ms
 root@ClienteUbuntu:~# 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>La máquina <strong>Firewall</strong> tiene conectividad con la <strong>ClienteUbuntu</strong>, también con el <strong>Switch</strong>, y conectividad con el exterior.</p>
+<p>La máquina <strong>Firewall</strong> tiene conectividad con la máquina <strong>ClienteUbuntu</strong>, también con el <strong>Switch</strong>, y conectividad con el exterior.</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1712,7 +1748,7 @@ Se hace con el siguiente comando:</p>
 </pre></td><td class="rouge-code"><pre>root@Firewall:~# <span class="nb">echo </span>1 <span class="o">&gt;</span> /proc/sys/net/ipv4/ip_forward
 root@Firewall:~# 
 </pre></td></tr></tbody></table></code></div></div>
-<p>Ahora si hacemos ping desde la máquina <strong>ClienteUbuntu</strong> hacia una máquina de nuestra red local, debería funcionar.</p>
+<p>Ahora si hacemos <code class="language-plaintext highlighter-rouge">ping</code> desde la máquina <strong>ClienteUbuntu</strong> hacia una máquina de nuestra red local, debería funcionar.</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1740,11 +1776,18 @@ root@ClienteUbuntu:~#
 
 <p>Para ello, debemos editar el fichero <code class="language-plaintext filepath highlighter-rouge">/etc/sysctl.conf</code> y descomentar la línea que pone <code class="language-plaintext highlighter-rouge">#net.ipv4.ip_forward=1</code></p>
 
+<p>Para aplicar la configuración que acabamos de hacer vamos a usar el comando <code class="language-plaintext highlighter-rouge">sudo sysctl -p /etc/sysctl.conf</code></p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>sysctl <span class="nt">-p</span> /etc/sysctl.conf
+</pre></td></tr></tbody></table></code></div></div>
+
 <blockquote class="prompt-info">
   <p>Ahora si, pasamos a configurar <strong>Iptables</strong>.</p>
 </blockquote>
 
-<p>Listamos las reglas que tine <strong>Iptables</strong> actualmente:</p>
+<p>Listamos las reglas que tiene <strong>Iptables</strong> actualmente:</p>
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -1767,34 +1810,6 @@ Chain FORWARD <span class="o">(</span>policy ACCEPT 0 packets, 0 bytes<span clas
 Chain OUTPUT <span class="o">(</span>policy ACCEPT 0 packets, 0 bytes<span class="o">)</span>
  pkts bytes target     prot opt <span class="k">in     </span>out     <span class="nb">source               </span>destination         
 root@Firewall:~# 
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>Primero de nada vamos a <strong>denegar</strong> todo el tráfico.</p>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre>root@Firewall:~# iptables <span class="nt">-P</span> INPUT DROP
-root@Firewall:~# iptables <span class="nt">-P</span> OUTPUT DROP
-root@Firewall:~# iptables <span class="nt">-P</span> FORWARD DROP
-root@Firewall:~#
-</pre></td></tr></tbody></table></code></div></div>
-
-<blockquote class="prompt-warning">
-  <p>No os preocupéis si ya no podéis hacer <strong>ping</strong> al exterior, es normal.</p>
-</blockquote>
-
-<p>Ahora vamos a permitir el tráfico <strong>icmp</strong> tanto de entrada, como de salida.</p>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre>root@Firewall:~# iptables <span class="nt">-A</span> FORWARD <span class="nt">-i</span> eth0 <span class="nt">-o</span> net14 <span class="nt">-p</span> icmp <span class="nt">-j</span> ACCEPT
-root@Firewall:~# iptables <span class="nt">-A</span> FORWARD <span class="nt">-o</span> eth0 <span class="nt">-i</span> net14 <span class="nt">-p</span> icmp <span class="nt">-j</span> ACCEPT
-root@Firewall:~#
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>Por último vamos a agregar una regla para que la máquina <strong>ClienteUbuntu</strong> tenga acceso a internet.</p>
@@ -1832,6 +1847,45 @@ PING 8.8.8.8 <span class="o">(</span>8.8.8.8<span class="o">)</span> 56<span cla
 rtt min/avg/max/mdev <span class="o">=</span> 10.696/10.897/11.099/0.201 ms
 root@ClienteUbuntu:~# 
 </pre></td></tr></tbody></table></code></div></div>
+
+<hr />
+<h2 id="guardar-configuración-de-iptables"><span class="me-2">Guardar configuración de Iptables</span><a href="#guardar-configuración-de-iptables" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Todos los cambios realizados en Iptables se borrarán una vez reiniciemos la máquina <strong>Firewall</strong>, así que vamos a aprender como podemos guardar todos los cambios.</p>
+
+<p>Instalamos el paquete <code class="language-plaintext highlighter-rouge">iptables-persistent</code> (Cuando nos pregunte <strong>Save current IPv4/IPv6 rules?</strong> le damos a <strong>Yes</strong>)</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>root@Firewall:~# apt <span class="nb">install </span>iptables-persistent <span class="nt">-y</span>
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+iptables-persistent is already the newest version <span class="o">(</span>1.0.16<span class="o">)</span><span class="nb">.</span>
+0 upgraded, 0 newly installed, 0 to remove and 117 not upgraded.
+root@Firewall:~# 
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Guardamos la configuración con este comando:</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="¡Copiado!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>root@Firewall:~# netfilter-persistent save
+run-parts: executing /usr/share/netfilter-persistent/plugins.d/15-ip4tables save
+run-parts: executing /usr/share/netfilter-persistent/plugins.d/25-ip6tables save
+root@Firewall:~#
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Si reiniciamos la máquina, nuestras reglas de <strong>Iptables</strong> seguirán como estaban configuradas.</p>
 
 <p><code class="language-plaintext highlighter-rouge">Y aquí da por finalizado el laboratorio, muchas gracias por leer el post, nos vemos en el próximo :)</code></p>
 
@@ -1984,6 +2038,21 @@ root@ClienteUbuntu:~#
 
 
 
+
+  <div id="access-lastmod" class="post">
+    <div class="panel-heading">Actualizado recientemente</div>
+    <ul class="post-content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Laboratorio-Proxmox/">Laboratorio con Firewall en Proxmox</a>
+        </li>
+      
+    </ul>
+  </div>
+  <!-- #access-lastmod -->
 
 
       <!-- The trending tags list -->
