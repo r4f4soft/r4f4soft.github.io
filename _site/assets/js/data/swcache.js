@@ -59,7 +59,7 @@ const resource = [
 const allowedDomains = [
     
 
-    '192.168.28.10:4000',
+    '192.168.28.10:80',
 
     
 
