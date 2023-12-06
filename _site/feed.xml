@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://192.168.28.10/</id>
+  <id>http://0.0.0.0:4000/</id>
   <title>R4f4soft</title>
   <subtitle></subtitle>
-  <updated>2023-09-15T17:33:04+02:00</updated>
+  <updated>2023-12-06T12:09:29+01:00</updated>
   <author>
     <name>r4f4soft</name>
-    <uri>http://192.168.28.10/</uri>
+    <uri>http://0.0.0.0:4000/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://192.168.28.10/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://0.0.0.0:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="es-ES"
-    href="http://192.168.28.10/"/>
+    href="http://0.0.0.0:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
   <rights> © 2023 r4f4soft </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -20,14 +20,56 @@
 
   
   <entry>
+    <title>OverTheWire - Bandit Walkthrough</title>
+    <link href="http://0.0.0.0:4000/posts/OverTheWireBandit/" rel="alternate" type="text/html" title="OverTheWire - Bandit Walkthrough" />
+    <published>2023-12-06T00:00:00+01:00</published>
+  
+    <updated>2023-12-06T00:00:00+01:00</updated>
+  
+    <id>http://0.0.0.0:4000/posts/OverTheWireBandit/</id>
+    <content src="http://0.0.0.0:4000/posts/OverTheWireBandit/" />
+    <author>
+      <name>r4f4soft</name>
+    </author>
+
+  
+    
+    <category term="OverTheWire" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      En este post vamos a realizar todos los niveles del CTF OverTheWire: bandit que actualmente van desde el 0 hasta el 33.
+
+Nivel 0:
+
+Para empezar el primer nivel debemos conectarnos por SSH a la siguiente direccion ‘bandit.labs.overthewire.org’ y mediante el usuario bandit0, contraseña bandit0 y puerto 2220.
+
+Con el siguiente oneliner podemos conectarnos:
+
+sshpass -p 'bandit0' ssh bandit0@bandit....
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Máquina ICA1 - Vulnhub</title>
-    <link href="http://192.168.28.10/posts/Vulnhub-ICA1/" rel="alternate" type="text/html" title="Máquina ICA1 - Vulnhub" />
+    <link href="http://0.0.0.0:4000/posts/Vulnhub-ICA1/" rel="alternate" type="text/html" title="Máquina ICA1 - Vulnhub" />
     <published>2023-09-15T00:00:00+02:00</published>
   
     <updated>2023-09-15T00:00:00+02:00</updated>
   
-    <id>http://192.168.28.10/posts/Vulnhub-ICA1/</id>
-    <content src="http://192.168.28.10/posts/Vulnhub-ICA1/" />
+    <id>http://0.0.0.0:4000/posts/Vulnhub-ICA1/</id>
+    <content src="http://0.0.0.0:4000/posts/Vulnhub-ICA1/" />
     <author>
       <name>r4f4soft</name>
     </author>
@@ -56,55 +98,14 @@ Según información de nuestra red de inteligencia, el ICA está trabajando en u
 
   
   <entry>
-    <title>OverTheWire - Bandit Walkthrough</title>
-    <link href="http://192.168.28.10/posts/OverTheWire-Bandit/" rel="alternate" type="text/html" title="OverTheWire - Bandit Walkthrough" />
-    <published>2023-06-05T00:00:00+02:00</published>
-  
-    <updated>2023-06-05T00:00:00+02:00</updated>
-  
-    <id>http://192.168.28.10/posts/OverTheWire-Bandit/</id>
-    <content src="http://192.168.28.10/posts/OverTheWire-Bandit/" />
-    <author>
-      <name>r4f4soft</name>
-    </author>
-
-  
-    
-    <category term="OverTheWire" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      En este post vamos a realizar todos los niveles del CTF OverTheWire: bandit que actualmente van desde el 0 hasta el 33.
-
-Nivel 0:
-Para conectarnos a la máquina debemos conectarnos por SSH a la siguiente direccion ‘bandit.labs.overthewire.org’ y mediante el usuario bandit0, contraseña bandit0 puerto 2220.
-ssh bandit0@bandit.labs.overthewire.org -p 2220
-
-
-Dentro encontraremos un fichero llamado r...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
     <title>Laboratorio con Firewall en Proxmox</title>
-    <link href="http://192.168.28.10/posts/Laboratorio-Proxmox/" rel="alternate" type="text/html" title="Laboratorio con Firewall en Proxmox" />
+    <link href="http://0.0.0.0:4000/posts/Laboratorio-Proxmox/" rel="alternate" type="text/html" title="Laboratorio con Firewall en Proxmox" />
     <published>2023-05-18T00:00:00+02:00</published>
   
-    <updated>2023-05-28T21:22:05+02:00</updated>
+    <updated>2023-05-18T00:00:00+02:00</updated>
   
-    <id>http://192.168.28.10/posts/Laboratorio-Proxmox/</id>
-    <content src="http://192.168.28.10/posts/Laboratorio-Proxmox/" />
+    <id>http://0.0.0.0:4000/posts/Laboratorio-Proxmox/</id>
+    <content src="http://0.0.0.0:4000/posts/Laboratorio-Proxmox/" />
     <author>
       <name>r4f4soft</name>
     </author>
